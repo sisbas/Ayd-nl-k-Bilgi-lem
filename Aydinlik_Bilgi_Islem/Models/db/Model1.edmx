@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="genelModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\bim2\Desktop\aydinlik_bilgi_islem_mvc\aydinlik_bilgi_islem_mvc\bin\genel.sqlite;synchronous=Full" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GenelBilgi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="email" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="islemYapildimi" Type="bit" />
+          <Property Name="dahili" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="konu" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="sikayet" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="bilgisayarAcipKapama" Type="bit" />
+          <Property Name="programiAcipKapama" Type="bit" />
+          <Property Name="kablolarTakili" Type="bit" />
+          <Property Name="gucDugmesiAcikMi" Type="bit" />
+          <Property Name="ip" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="macAdres" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityContainer Name="genelModelStoreContainer">
+          <EntitySet Name="GenelBilgi" EntityType="Self.GenelBilgi" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="genelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GenelBilgi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soyad" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="islemYapildimi" Type="Boolean" />
+          <Property Name="dahili" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="konu" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="sikayet" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="bilgisayarAcipKapama" Type="Boolean" />
+          <Property Name="programiAcipKapama" Type="Boolean" />
+          <Property Name="kablolarTakili" Type="Boolean" />
+          <Property Name="gucDugmesiAcikMi" Type="Boolean" />
+          <Property Name="ip" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="macAdres" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="genelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GenelBilgi" EntityType="Self.GenelBilgi" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="genelModelStoreContainer" CdmEntityContainer="genelEntities">
+          <EntitySetMapping Name="GenelBilgi">
+            <EntityTypeMapping TypeName="genelModel.GenelBilgi">
+              <MappingFragment StoreEntitySet="GenelBilgi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="islemYapildimi" ColumnName="islemYapildimi" />
+                <ScalarProperty Name="dahili" ColumnName="dahili" />
+                <ScalarProperty Name="konu" ColumnName="konu" />
+                <ScalarProperty Name="sikayet" ColumnName="sikayet" />
+                <ScalarProperty Name="bilgisayarAcipKapama" ColumnName="bilgisayarAcipKapama" />
+                <ScalarProperty Name="programiAcipKapama" ColumnName="programiAcipKapama" />
+                <ScalarProperty Name="kablolarTakili" ColumnName="kablolarTakili" />
+                <ScalarProperty Name="gucDugmesiAcikMi" ColumnName="gucDugmesiAcikMi" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="macAdres" ColumnName="macAdres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
