@@ -42,7 +42,7 @@ namespace Aydinlik_Bilgi_Islem.Controllers
         private void SendEmail()
         {
             MailMessage o = new MailMessage("sisemih@gmail.com", "sisbas@yahoo.com", "Aydınlık Bilgi İşlem", "Bir şikayet mesajı ulaşmıştır");
-            NetworkCredential netCred = new NetworkCredential("sisemih@gmail.com", "Fifediojo179355.Asu");
+            NetworkCredential netCred = new NetworkCredential("*********", "*************");
             SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
             smtpobj.EnableSsl = true;
             smtpobj.Credentials = netCred;
