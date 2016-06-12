@@ -13,10 +13,10 @@ namespace Aydinlik_Bilgi_Islem.Models.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class genelEntities : DbContext
+    public partial class genelEntities6 : DbContext
     {
-        public genelEntities()
-            : base("name=genelEntities")
+        public genelEntities6()
+            : base("name=genelEntities6")
         {
         }
     

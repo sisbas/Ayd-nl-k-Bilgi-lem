@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/Content/css/morris.css" rel="stylesheet" />
+    <link href="~/Content/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Content/css/timeline.css" rel="stylesheet" />
+
+</head>
+<body id="mimin" class="dashboard">
+
+    @Html.Partial("_PartialPageHeader")
+
+    <div class="col-lg-10">
+        <div class="panel panel-body">
+            <section style="margin-left:250px;margin-top:25px;">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+
+
+    @Html.Partial("_PartialPageFooter")
+
+</body>
+</html>
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/metisMenu.min.js"></script>
+<script src="~/Content/js/morris-data.js"></script>
+<script src="~/Content/js/morris.min.js"></script>
+<script src="~/Content/js/raphael-min.js"></script>
+<script src="~/Content/js/sb-admin-2.js"></script>

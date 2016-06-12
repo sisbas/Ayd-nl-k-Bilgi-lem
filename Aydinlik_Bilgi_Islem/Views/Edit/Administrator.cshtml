@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Aydinlik_Bilgi_Islem.Models.db.GenelBilgi>
+
+@{
+    ViewBag.Title = "Administrator";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Yönetim</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.islemYapildimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sikayet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ipAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.macAdres)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.islemYapildimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sikayet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ipAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.macAdres)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
