@@ -14,6 +14,13 @@ namespace Aydinlik_Bilgi_Islem
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Administrator",
+                url:"Administrator/{action}",
+                defaults: new { controller = "Administrator", action = "Login", id = UrlParameter.Optional }
+                );
+
+            /////////////////////////////////////////////////////////////////////
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

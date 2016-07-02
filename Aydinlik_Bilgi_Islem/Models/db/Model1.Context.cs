@@ -13,10 +13,10 @@ namespace Aydinlik_Bilgi_Islem.Models.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class genelEntities6 : DbContext
+    public partial class genelEntities4 : DbContext
     {
-        public genelEntities6()
-            : base("name=genelEntities6")
+        public genelEntities4()
+            : base("name=genelEntities4")
         {
         }
     
@@ -25,6 +25,7 @@ namespace Aydinlik_Bilgi_Islem.Models.db
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<GenelBilgi> GenelBilgi { get; set; }
     }
 }

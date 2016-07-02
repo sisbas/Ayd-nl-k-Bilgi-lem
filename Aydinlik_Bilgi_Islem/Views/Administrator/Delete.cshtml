@@ -1,0 +1,69 @@
+﻿@model Aydinlik_Bilgi_Islem.Models.db.GenelBilgi
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div>
+   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.islemYapildimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.islemYapildimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sikayet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sikayet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ipAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ipAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.macAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.macAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" />
+        </div>
+    }
+</div>

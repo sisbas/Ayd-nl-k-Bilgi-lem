@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<Aydinlik_Bilgi_Islem.Models.db.GenelBilgi>
 
 @{
-    ViewBag.Title = "Administrator";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
-
-<h2>Yönetim</h2>
 
 <table class="table">
     <tr>
@@ -23,6 +21,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.macAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateTime)
         </th>
         <th></th>
     </tr>
@@ -45,9 +46,11 @@
             @Html.DisplayFor(modelItem => item.macAdres)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.dateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.id }) |            
+            @Html.ActionLink("Sil", "Delete", new { id=item.id })
         </td>
     </tr>
 }

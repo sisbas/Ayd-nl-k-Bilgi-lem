@@ -5,75 +5,79 @@
     Layout = "~/Views/Shared/_LayoutPageMain.cshtml";
 }
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Şikayet Formu</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.ad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.ad, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ad, "", new { @class = "text-danger" })
             </div>
         </div>
-                
+
         <div class="form-group">
             @Html.LabelFor(model => model.sikayet, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.sikayet, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.sikayet, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input  id="btnGonder" type="submit" value="Gönder" class="btn btn-default" />
+                <input id="btnGonder" type="submit" value="Gönder" onclick="notifyMe()" class="btn btn-default" />
             </div>
         </div>
     </div>
+        
 }
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input id="btnData" type="submit" value="Data" class="btn btn-danger" />
+    </div>
+</div>
+<script>
+    function notifyMe() {
+        if (!Notification) {
+            alert('Lütfen Chrome, Firefox, Opera, Internet Explorer veya Spartan\'ın güncel bir versiyonunu kullanınız...');
+            return;
+        }
+
+        if (Notification.permission !== "granted")
+            Notification.requestPermission();
+
+        var notification = new Notification('Hoşgeldiniz!', {
+            icon: 'http://www.karayeltasarim.com/Resim/Upload/miniworld635620976047761956.png',
+            body: "Sorununuza en kısa zamanda çare bulacağız... İyi çalışmalar",
+        });
+
+
+        notification.onclick = function () {
+            window.open("http://www.sisbas.com");
+        }
+    }
+
+    //window.onload = notifyMe;
+
+</script>
 <script>
     $().ready(function () {
-        $('#btnGonder').click(function () {
-            emailjs.send("gmail", " template_2oDkCThb", { name: "James", notes: "Check this out!" });
-        })
-    })
-    
-</script>
-
-@*<script>
-    $().ready(function () {
-        $('#btnGonder').click(function () {
-            sendMail();
-        })
-    })
-
-    function sendMail() {
-        $.ajax({
-            type: 'POST',
-            url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-            data: {
-                'key': 'YOUR API KEY HERE',
-                'message': {
-                    'from_email': 'sisemih@gmail.com',
-                    'to': [
-                        {
-                            'email': 'sisbas@yahoo.com',
-                            'name': 'RECIPIENT NAME (OPTIONAL)',
-                            'type': 'to'
-                        }
-                    ],
-                    'autotext': 'true',
-                    'subject': 'YOUR SUBJECT HERE!',
-                    'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+        $('#btnData').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DataEdit","Home")",
+                success: function (e) {
+                    console.log(e);
+                },
+                error: function (e1) {
+                    console.log(e1);
                 }
-            }
-        }).done(function (response) {
-            console.log(response); // if you're into that sorta thing
-        });
-    }
-</script>*@
+            })
+        })
+    })
+</script>
