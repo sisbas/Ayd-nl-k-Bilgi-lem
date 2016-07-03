@@ -10,25 +10,16 @@
 namespace Aydinlik_Bilgi_Islem.Models.db
 {
     using System;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
+    using System.Collections.Generic;
+    
     public partial class GenelBilgi
     {
         public long id { get; set; }
-        [Required]
-        [DisplayName("Ad")]
         public string ad { get; set; }
-        [DisplayName("Durum")]
         public Nullable<bool> islemYapildimi { get; set; }
-        [Required]
-        [DisplayName("Konu")]
         public string sikayet { get; set; }
-        [DisplayName("Ip Adresi")]
         public string ipAdres { get; set; }
-        [DisplayName("Mac Adresi")]
         public string macAdres { get; set; }
-        
-        [DisplayName("Tarih")]
         public Nullable<System.DateTime> dateTime { get; set; }
     }
 }

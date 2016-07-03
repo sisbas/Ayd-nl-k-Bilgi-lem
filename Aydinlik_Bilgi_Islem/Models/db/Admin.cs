@@ -9,12 +9,12 @@
 
 namespace Aydinlik_Bilgi_Islem.Models.db
 {
-    using System.ComponentModel;
+    using System;
+    using System.Collections.Generic;
+    
     public partial class Admin
     {
-        [DisplayName("Kullanýcý Adý")]
         public string user { get; set; }
-        [DisplayName("Sifre")]
         public string password { get; set; }
         public long id { get; set; }
     }

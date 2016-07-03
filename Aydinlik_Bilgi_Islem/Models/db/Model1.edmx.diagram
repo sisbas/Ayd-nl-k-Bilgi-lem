@@ -7,6 +7,7 @@
       <Diagram DiagramId="fd7c3c12662e42de8f0260efab7f91d8" Name="Diagram1">
         <EntityTypeShape EntityType="genelModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="genelModel.GenelBilgi" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="genelModel.dahiliNum" Width="1.5" PointX="4.375" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

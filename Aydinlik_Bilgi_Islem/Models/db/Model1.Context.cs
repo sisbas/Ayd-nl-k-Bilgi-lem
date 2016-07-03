@@ -27,5 +27,6 @@ namespace Aydinlik_Bilgi_Islem.Models.db
     
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<GenelBilgi> GenelBilgi { get; set; }
+        public virtual DbSet<dahiliNum> dahiliNum { get; set; }
     }
 }

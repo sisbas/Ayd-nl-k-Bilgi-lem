@@ -1,0 +1,45 @@
+﻿<div style="margin:30px;">
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr style="text-align:left;">
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Ünvan</th>
+                <th>Dahili</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr style="text-align:left;">
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Ünvan</th>
+                <th>Dahili</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<button class="btn btn-default" id="tikla">Tıkla</button>
+<script>
+    $(document).ready(function () {
+        $('#example').dataTable({
+            "processing": true,
+            "serverSide": true,
+            "info": true,
+            "stateSave": true,
+            "lengthMenu": [[10, 20, 50, -1], [10, 20, 50, "All"]],
+            "ajax":{
+                "url": "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/Dahili/AjaxGetJsonData",
+                "type": "GET",
+                "contentType":"application/json; charset=utf-8"
+    },
+            "columns": [
+                { "data": "Ad", "orderable" : true },
+                { "data": "Soyad", "orderable": false },
+                { "data": "Ünvan", "orderable": true },
+                { "data": "Dahili", "orderable": true },
+            ],
+            "order": [[0, "asc"]]
+    });
+    });
+</script>
